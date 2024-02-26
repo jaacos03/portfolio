@@ -1,0 +1,56 @@
+<nav class="text-white flex flex-wrap items-center">
+	<label for="menu-toggle" class="cursor-pointer lg:hidden block">
+        <svg class="fill-current text-white" width="40" height="40" viewBox="0 0 30 30"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg>
+    </label>
+    <input class="hidden" type="checkbox" id="menu-toggle" />
+	<div class="hidden lg:flex lg:w-auto w-full" id="menu">
+		<div class="items-start my-2">
+            <a class="text-6xl font-bold efecto" href="/Emiliano_Maldonado_CV.pdf" target="_blank">CV</a>
+            <!--
+            <br>
+            <a class="text-6xl font-bold efecto" href="/notas">Notas</a>
+            -->
+            <br>
+            <a class="text-6xl font-bold efecto" href="/">Inicio</a>
+            <br>
+            <a class="text-6xl font-bold efecto" href="/#skills">Skills</a>
+            <br>
+            <a class="text-6xl font-bold efecto" href="/#contacto">Contacto</a>
+            <br>
+            <a class="text-6xl font-bold efecto" href="/#proyectos">Proyectos</a>
+        </div>
+	</div>
+</nav>
+
+<style>
+    #menu-toggle:checked + #menu {
+        display: block;
+    }
+	.efecto:hover{
+        --bg-size: 400%;
+        --color-one: #26bb80;
+        --color-two: #12543a;
+        background: linear-gradient(90deg,var(--color-one),var(--color-two),var(--color-one)) 0 0 / var(--bg-size) 100%;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        animation: move-bg 8s infinite linear;
+    }
+
+    @keyframes move-bg {
+        to {
+            background-position: var(--bg-size) 0;
+        }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .nav-item:hover {
+            animation: move-bg 8s linear infinite;
+        }
+        @keyframes move-bg {
+            to {
+                background-position: var(--bg-size) 0;
+            }
+        }
+    }
+</style>
